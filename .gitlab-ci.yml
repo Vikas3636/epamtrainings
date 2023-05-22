@@ -12,10 +12,10 @@ variables:
 caches:
   key: ${CI COMMIT_REF_SLUG}
   paths:
- - .cache/*
- - cache/Cypress
- - node_modules
- - build
+    - .cache/*
+    - cache/Cypress
+    - node_modules
+    - build
 
 install:
   stage: build
@@ -26,4 +26,4 @@ ui-chrome-tests:
   stage: test
   parallel: 5
   script:
-  - npx cypress run --record --parallel browser chrome
+    - npx cypress run --record --parallel browser chrome
