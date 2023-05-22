@@ -1,8 +1,8 @@
 image: cypress/browsers:node12.14.1-chrome85-ff81
 
 stages: 
-  -bild
-  -test
+  - bild
+  - test
 
 variables: 
   npm_config_cache: '$CI_PROJECT_DIR/. npm'
