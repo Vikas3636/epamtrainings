@@ -21,8 +21,8 @@ install:
   stage: build
   script:
     - npm ci
-    - npx cypress cache path
-    - npx cypress cache list
+    - npm run start:ci &
+    - npm run test
 
 ui-chrome-tests:
   stage: test
