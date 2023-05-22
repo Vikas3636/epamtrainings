@@ -27,7 +27,6 @@ describe('cypress training task4', () => {
         products.forEach((products) => {
             let productName = products.productName
             let productPrice = products.productPrice
-            let number = products.productNumberInCart
             cy.get('.cart_list>div:nth-of-type(' + index + ') .inventory_item_name').should('have.text', productName)
             cy.get('.cart_list>div:nth-of-type(' + index + ') .inventory_item_price').should('contains.text', productPrice)
             index++
