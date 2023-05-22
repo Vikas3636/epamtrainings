@@ -1,0 +1,24 @@
+{
+    "books": [{
+        "isbn": "12345",
+        "title": "Story book 1",
+        "subTitle": "story sub 1",
+        "author": "vikas n",
+        "publish_date": "2020-06-04T08:48:39.000Z",
+        "publisher": "VikasMedia",
+        "pages": 900,
+        "description": "This is a book",
+        "website": "http://chimera.labs.oreilly.com/books/1230000000561/index.html"
+    },
+    {
+        "isbn": "67890",
+        "title": "Story book 2",
+        "subTitle": "story sub 2",
+        "author": "vikas nallabelli",
+        "publish_date": "2023-06-04T08:48:39.000Z",
+        "publisher": "VikasMedia",
+        "pages": 800,
+        "description": "This is a book 2",
+        "website": "http://chimera.labs.oreilly.com/books/1230000000561/index.html"
+    }]
+}

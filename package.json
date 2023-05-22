@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "cypress": "^12.12.0",
+    "cypress-mochawesome-reporter": "^3.4.0",
+    "cypress-xpath": "^2.0.1"
+  },
+  "scripts": {
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "runInChrome": "cypress run --headed --spec cypress/e2e/task4.cy.js --browser chrome",
+    "cypressRun:chrome":"cypress run -- headed --browser chrome",
+    "cypressRun:firefox":"cypress run -- headed --browser firefox"
+  }
+}

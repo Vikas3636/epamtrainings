@@ -1,0 +1,19 @@
+[
+    {
+        "productName": "Sauce Labs Backpack",
+        "productPrice": "29.99",
+        "productNumberInCart": 1
+    },
+
+    {
+        "productName": "Sauce Labs Bike Light",
+        "productPrice": "9.99",
+        "productNumberInCart": 2
+    },
+
+    {
+        "productName": "Test.allTheThings() T-Shirt (Red)",
+        "productPrice": "15.99",
+        "productNumberInCart": 3
+    }
+]
