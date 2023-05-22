@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  projectId: 'sv4wew',
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
     setupNodeEvents(on, config) {
@@ -10,5 +11,4 @@ module.exports = defineConfig({
     "chromeWebSecurity": false,
     "experimentalModifyObstructiveThirdPartyCode": true,
   },
-  projectId: 'sv4wew'
 });
