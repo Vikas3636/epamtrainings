@@ -1,6 +1,5 @@
 const { defineConfig } = require("cypress");
 
-
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
@@ -11,4 +10,5 @@ module.exports = defineConfig({
     "chromeWebSecurity": false,
     "experimentalModifyObstructiveThirdPartyCode": true,
   },
+  projectId: 'vikas'
 });
