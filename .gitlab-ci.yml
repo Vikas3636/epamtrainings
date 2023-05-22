@@ -1,7 +1,7 @@
 image: cypress/browsers:node12.14.1-chrome85-ff81
 
 stages: 
-  - bild
+  - build
   - test
 
 variables: 
@@ -18,12 +18,14 @@ caches:
     - build
 
 install:
+  image: cypress/browsers:node12.14.1-chrome85-ff81
   stage: build
   script:
     - пpm ci
 
 ui-chrome-tests:
+  image: cypress/browsers:node12.14.1-chrome85-ff81
   stage: test
   parallel: 5
   script:
-    - npx cypress run --record --parallel browser chrome
+    - npx cypress run --record --parallel --browser chrome --group "UI - Chrome" --spec "cypress/e2e/*"
