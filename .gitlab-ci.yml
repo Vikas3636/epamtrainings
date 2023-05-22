@@ -10,7 +10,7 @@ variables:
   CYPRESS_RECORD_KEY: 'a3579ee4-3a7c-483d-b0f1-f1c90767057d'
 
 cache:
-  key: ${CI COMMIT_REF_SLUG}
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - .cache/*
     - cache/Cypress
