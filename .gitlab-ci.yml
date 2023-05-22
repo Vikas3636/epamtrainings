@@ -18,9 +18,17 @@ cache:
     - build
 
 install:
+  image: cypress/browsers:node12.14.1-chrome85-ff81
   stage: build
   script:
-    - пpm ci
+    - yarn install --frozen-lockfile
+    # check Cypress binary path and cached versions
+    - npx cypress cache path
+    - npx cypress cache list
+    - yarn types
+    - yarn lint
+    - yarn test:unit:ci
+    - yarn build:ci
 
 ui-chrome-tests:
   stage: test
