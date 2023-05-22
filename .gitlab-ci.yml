@@ -1,31 +1,29 @@
-stages:
+image: cypress/browsers:node12.14.1-chrome85-ff81
+
+stages: 
+  - bild
   - test
-# For recording and parallelization to work you must set your CYPRESS_RECORD_KEY
-# in GitLab repo → Settings → CI/CD → Variables
-variables:
-  npm_config_cache: "$CI_PROJECT_DIR/.npm"
-  CYPRESS_RECORD_KEY: "a3579ee4-3a7c-483d-b0f1-f1c90767057d"
-# Caches dependencies using npm lock file as key
-# https://docs.cypress.io/guides/continuous-integration/introduction#Caching
-cache:
-  key:
-    files:
-      - package-lock.json
+
+variables: 
+  npm_config_cache: '$CI_PROJECT_DIR/. npm'
+  CYPRESS_CACE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
+  CYPRESS_RECORD_KEY: 'a3579ee4-3a7c-483d-b0f1-f1c90767057d'
+
+caches:
+  key: ${CI COMMIT_REF_SLUG}
   paths:
-    - .npm/ # Moves npm cache inside project per GitLab restrictions
-test:
-  # Uses official Cypress docker image for dependencies
-  # https://docs.cypress.io/guides/continuous-integration/introduction#Official-Cypress-Docker-Images
-  image: cypress/browsers:node12.14.1-chrome85-ff81
-  stage: test
-  parallel: 5 # Uses 2 parallel instances
+    - .cache/*
+    - cache/Cypress
+    - node_modules
+    - build
+
+install:
+  stage: build
   script:
-    - npm ci --cache .npm --prefer-offline
-    # Starts web server for E2E tests - replace with your own server invocation
-    # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
-    - npm start &
-    - npx wait-on 'http-get://localhost:3000' # Waits for above
-    # Runs tests in parallel and records to Cypress Cloud
-    # https://docs.cypress.io/guides/cloud/projects#Set-up-a-project-to-record
-    # https://docs.cypress.io/guides/guides/parallelization
-    - npx cypress run --record --parallel --browser chrome
+    - пpm ci
+
+ui-chrome-tests:
+  stage: test
+  parallel: 5
+  script:
+    - npx cypress run --record --parallel browser chrome
