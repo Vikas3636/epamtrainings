@@ -1,11 +1,14 @@
 image: cypress/browsers:node12.14.1-chrome85-ff81
+
 stages:
   - build
   - test
+
 variables:
   npm_config_cache: '$CI_PROJECT_DIR/.npm'
   CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
   CYPRESS_RECORD_KEY: 'a3579ee4-3a7c-483d-b0f1-f1c90767057d'
+
 cache:
   key: ${CI COMMIT_REF_SLUG}
   paths:
@@ -13,12 +16,14 @@ cache:
     - cache/Cypress
     - node_modules
     - build
+
 install:
   stage: build
   script:
     - пpm ci
+
 ui-chrome-tests:
   stage: test
   parallel: 5
   script:
-    - npx cypress run --record --parallel --browser chrome
+    - npx cypress run --record --parallel --browser chrome --group "UI - Chrome" --spec "cypress/e2e/*"
