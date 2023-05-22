@@ -15,7 +15,6 @@ cache:
     - .cache/*
     - cache/Cypress
     - node_modules
-    - .npm/
     - build
 
 install:
