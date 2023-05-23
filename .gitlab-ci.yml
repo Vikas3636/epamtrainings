@@ -8,8 +8,7 @@ variables:
   npm_config_cache: '$CI_PROJECT_DIR/.npm'
   CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
   CYPRESS_RECORD_KEY: 'a3579ee4-3a7c-483d-b0f1-f1c90767057d'
-
-
+  
 rule:
   rules:
     - if: $CI_COMMIT_BRANCH == "main"
