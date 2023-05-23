@@ -12,7 +12,7 @@ variables:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - .cache/*
+    - .main/cache/
     - cache/Cypress
     - node_modules
     - build
@@ -21,8 +21,6 @@ install:
   stage: build
   script:
     - npm ci
-    - npm run start:ci &
-    - npm run test
 
 ui-chrome-tests:
   stage: test

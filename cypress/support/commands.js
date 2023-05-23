@@ -27,15 +27,25 @@
 /// <reference  types="Cypress-xpath">
 
 Cypress.Commands.add('login', (email, password) => {
-    cy.get('#user-name').type(email)
-    cy.get('#password').type(password)
+  cy.get('#user-name').type(email)
+  /*.pause()
+  cy.get('#user-name').type(email, {clear: false})
+  cy.get('#user-name').type(email, {clear: true})*/
+  cy.get('#password').type(password)
     .debug()
-    cy.get('#login-button').click()
-  }) 
+  cy.get('#login-button').click()
+})
 
 Cypress.Commands.add('enterDetailsAndContinue', (firstName, lastName, pinCode) => {
-    cy.get('#first-name').type(firstName)
-    cy.get('#last-name').type(lastName)
-    cy.get('#postal-code').type(pinCode)
-    cy.get('#continue').click()
- }) 
+  cy.get('#first-name').type(firstName)
+  cy.get('#last-name').type(lastName)
+  cy.get('#postal-code').type(pinCode)
+  cy.get('#continue').click()
+})
+
+/*Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+  if (options && options.clear) {
+    text = `{selectAll}{backspace}${text}`
+  }
+  return originalFn(element, text, options)
+})*/
