@@ -12,14 +12,22 @@ variables:
 cache:
   key: ${CI_COMMIT_REF_SLUG}
   paths:
-    - .main/cache/*
+    - .cache/*
     - cache/Cypress
     - node_modules
     - build
 
 install:
+  image: cypress/browsers:node12.14.1-chrome85-ff81
   stage: build
   script:
+    - yarn install --frozen-lockfile
+    - npx cypress cache path
+    - npx cypress cache list
+    - yarn types
+    - yarn lint
+    - yarn test:unit:ci
+    - yarn build:ci
     - npm ci
 
 ui-chrome-tests:
