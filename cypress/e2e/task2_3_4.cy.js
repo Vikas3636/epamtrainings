@@ -4,7 +4,7 @@ describe('cypress trainings', () => {
 
 
     let productNumber = 1
-    let removeTest = "Remove"
+    let removeText = "Remove"
     let productName 
     let firstName = "first name"
     let lastName = "last name"
@@ -36,7 +36,7 @@ describe('cypress trainings', () => {
     .pause()
     cy.log('click add to cart and go to cart page')
     cy.get('#add-to-cart-sauce-labs-onesie').click();
-    cy.get('[data-test="remove-sauce-labs-onesie"]').should('have.text', removeTest)
+    cy.get('[data-test="remove-sauce-labs-onesie"]').should('have.text', removeText)
     cy.get('.shopping_cart_link').click()
 
     cy.log('check product name in cart page')
@@ -50,6 +50,5 @@ describe('cypress trainings', () => {
 
     cy.log('Enter the details and click contine')
     cy.enterDetailsAndContinue(firstName, lastName, pinCode)
-
   })
 })
