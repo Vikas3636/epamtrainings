@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-05-24T13:30:59.600Z",
+    "end": "2023-05-24T13:31:10.980Z",
+    "duration": 11380,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c5a3794-4fe5-44a1-81d2-1174ed5319ec",
+      "title": "",
+      "fullFile": "cypress\\e2e\\OrangeHRMTest.cy.js",
+      "file": "cypress\\e2e\\OrangeHRMTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c5a752e-93ca-43af-9979-6b458e0f82b0",
+          "title": "Orange HRM Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify title positive",
+              "fullTitle": "Orange HRM Test Verify title positive",
+              "timedOut": null,
+              "duration": 3765,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress\\\\e2e\\\\OrangeHRMTest.cy.js\"\n}",
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.title().should('eq', 'OrangeHRM');",
+              "err": {},
+              "uuid": "c4019c7d-3518-4ef3-aea1-caeffe941d5e",
+              "parentUUID": "9c5a752e-93ca-43af-9979-6b458e0f82b0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify title negative",
+              "fullTitle": "Orange HRM Test Verify title negative",
+              "timedOut": null,
+              "duration": 4725,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress\\\\e2e\\\\OrangeHRMTest.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\OrangeHRMTest.cy.js\\\\Orange HRM Test -- Verify title negative (failed).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.title().should('eq', 'OrangeHRM123456789');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'OrangeHRM123456789'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected 'OrangeHRM' to equal 'OrangeHRM123456789'\n    at Context.eval (webpack:///./cypress/e2e/OrangeHRMTest.cy.js:11:19)",
+                "diff": "- 'OrangeHRM'\n+ 'OrangeHRM123456789'\n"
+              },
+              "uuid": "37ad6f16-1d0c-47c4-90cd-2a2089da94c1",
+              "parentUUID": "9c5a752e-93ca-43af-9979-6b458e0f82b0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c4019c7d-3518-4ef3-aea1-caeffe941d5e"
+          ],
+          "failures": [
+            "37ad6f16-1d0c-47c4-90cd-2a2089da94c1"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8490,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
